@@ -1,0 +1,15 @@
+=================================================================
+==86423==ERROR: AddressSanitizer: attempting double-free on 0x603000000fd0 in thread T0:
+    #0 0x0001058a8644 in _ZdaPv+0x74 (libclang_rt.asan_osx_dynamic.dylib:arm64e+0x50644)
+    #1 0x000104f55b38 in BrokenList::~BrokenList() asan_double_free.cpp:12
+    #2 0x000104f55960 in BrokenList::~BrokenList() asan_double_free.cpp:11
+    #3 0x000104f5572c in main asan_double_free.cpp:30
+    #4 0x0001957e4d78 in start+0x19f8 (dyld:arm64e+0x31d78)
+
+0x603000000fd0 is located 0 bytes inside of 20-byte region [0x603000000fd0,0x603000000fe4)
+freed by thread T0 here:
+    #0 0x0001058a8644 in _ZdaPv+0x74 (libclang_rt.asan_osx_dynamic.dylib:arm64e+0x50644)
+    #1 0x000104f55b38 in BrokenList::~BrokenList() asan_double_free.cpp:12
+    #2 0x000104f55960 in BrokenList::~BrokenList() asan_double_free.cpp:11
+    #3 0x000104f55720 in main asan_double_free.cpp:27
+    #4 0x0001957e4d78 in start+0x19f8 (dyld:arm64e+0x31d78)
